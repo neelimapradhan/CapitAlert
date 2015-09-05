@@ -7,12 +7,12 @@ class LoginForm(Form):
   password = PasswordField('Password', [Required()])
 
 class RegisterForm(Form):
-  name = TextField('NickName', [Required()])
+  name = TextField([Required()])
   email = TextField('Email address', [Required(), Email()])
   password = PasswordField('Password', [Required()])
   confirm = PasswordField('Repeat Password', [
       Required(),
       EqualTo('password', message='Passwords must match')
       ])
-  accept_tos = BooleanField('I accept the TOS', [Required()])
-  recaptcha = RecaptchaField()
+  accept_tos = BooleanField('I accept the TOS', [])
+  #recaptcha = RecaptchaField()
