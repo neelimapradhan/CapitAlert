@@ -10,9 +10,12 @@ twilio_number = "4106566222"
 
 def send_message():
 	name = capitalData.get_Name()
-	desired_item = "hoodie"
+	current_balance = capitalData.get_Balance()
+	desired_balance = 
+	desired_item = 
 	send_number = "4436949031"
-	message_to_send = "Hello " + name + ", you now have enough money to buy " + desired_item + " yay!!"
+	if (current_balance >= desired_balance)
+		message_to_send = "Hello " + name + ", you now have enough money to buy " + desired_item + " yay!!"
 	client = TwilioRestClient(account_sid, auth_token)
  	message = client.messages.create(body=message_to_send,
     to=send_number,    # your phone number
