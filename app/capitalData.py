@@ -1,4 +1,4 @@
-import requests
+
 import json
 import urllib2
 import urllib
@@ -20,3 +20,4 @@ def get_Name():
 
 def get_account_type():
   return data[0][""]
+
