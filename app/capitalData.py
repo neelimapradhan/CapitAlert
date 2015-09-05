@@ -19,4 +19,4 @@ def get_Name():
   return data[0]["nickname"]
 
 def get_account_type():
-  return data[0][""]
+  return data[0]["type"]
