@@ -6,6 +6,15 @@
  * Made By MaterializeCSS.com
  */
 
+
+@media (min-width: 300px)
+.modal-big
+{
+    width: 900px; !important
+    height: 900px; /* control height here */
+}
+
+
 nav ul a,
 nav .brand-logo {
   color: #444;
