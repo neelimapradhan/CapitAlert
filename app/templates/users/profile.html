@@ -2,3 +2,15 @@
    {% block content %}
      Hi {{ user.name }}!
    {% endblock %}
+
+   <h1> Your total balance is : {{ user.balance }} </h1>
+
+   <hr>
+
+
+   {% for item in user.itemlist %}
+   <h3> {{ item.name }} </h3>
+   <h5> {{ item.desiredBalance }} </h5>
+   </br>
+   </br>
+   {% endfor %}
