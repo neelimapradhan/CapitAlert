@@ -1,6 +1,11 @@
 from app.users import constants as USER
+from flask import Flask
 
-from app import db
+from flask.ext.sqlalchemy import SQLAlchemy
+app = Flask(__name__)
+db = SQLAlchemy(app)
+
+
 class User(db.Model):
 
     __tablename__ = 'users_user'
@@ -10,6 +15,11 @@ class User(db.Model):
     password = db.Column(db.String(120))
     role = db.Column(db.SmallInteger, default=USER.USER)
     status = db.Column(db.SmallInteger, default=USER.NEW)
+    user_data = relationship("UserData",
+    __tablename__ = 'user_data'
+    id = db.Column(db.Integer, primary_key=True)
+    balance = db.Column(db.Integer, default=0)
+    
 
 def __init__(self, name=None, email=None, password=None):
   self.name = name

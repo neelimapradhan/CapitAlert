@@ -1,17 +1,17 @@
 {% extends "base.html" %}
     {% block content %}
       {% from "forms/macros.html" import render_field %}
-      <form method="POST" action="." class="form-group form">
+     
+      <form method="POST" action="." class="form-group form col row s12"">
+       <div class="input-field col s12">
         {{ form.csrf_token }}
         {{ render_field(form.name,id="name", class="form-control", placeholder='Name', type="text") }}
         {{ render_field(form.email, class="input text", placeholder='E-mail Address') }}
         {{ render_field(form.password, class="input text", placeholder='Password') }}
         {{ render_field(form.confirm, class="input text", placeholder='Confirm Password') }}
-<!--      #   {{ render_field(form.accept_tos, class="input checkbox") }} -->
-<!--         <label>ReCaptcha</label> -->
-<!--       #  {{ form.recaptcha }} -->
         <input type="submit" value="Register" class="btn green">
       </form>
       <a href="{{ url_for('users.login') }}">Login</a>
+      </div>
     {% endblock %}
    

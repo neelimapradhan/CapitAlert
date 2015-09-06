@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+    {% block content %}
+      {% from "forms/macros.html" import render_field %}
+     
+      <form method="POST" action="/users/me/add_item" class="form3">
+       <div class="input-field">
+        {{ form3.csrf_token }}
+        {{ render_field(form3.iname,id="iname", class="input text", placeholder='Item Name', type="text") }}
+        {{ render_field(form3.idesc, class="input text", placeholder='Item Description') }}
+        {{ render_field(form3.icost, class="input text", placeholder='Item Cost') }}
+        {{ render_field(form3.ilink, class="input text", placeholder='Item Link') }}
+        {{ render_field(form3.ipriority, class="input text", placeholder='Item Priority') }}
+        {{ render_field(form3.iminbal, class="input text", placeholder='Minimum Balance Required to purchase item') }}
+        <input type="submit" value="Add Item" class="btn green">
+      </form><br/><br/>
+      <a class="btn green" href="{{ url_for('users.home') }}">Home</a>
+      </div>
+    {% endblock %}

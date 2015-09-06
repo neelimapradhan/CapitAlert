@@ -5,21 +5,15 @@
  *
  * Made By MaterializeCSS.com
  */
-
-
-@media (min-width: 300px)
-.modal-big
-{
-    width: 900px; !important
-    height: 900px; /* control height here */
-}
-
+ @import url(https://fonts.googleapis.com/css?family=Advent+Pro);
+font-family: 'Advent Pro', sans-serif;
 
 nav ul a,
 nav .brand-logo {
   color: #444;
+  font-family: 'Advent Pro', sans-serif;
 }
-
+<link href='https://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
 p {
   line-height: 2rem;
 }

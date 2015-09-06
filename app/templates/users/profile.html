@@ -1,16 +1,36 @@
    {% extends "base.html" %}
    {% block content %}
-     Hi {{ user.name }}!
-   {% endblock %}
 
-   <h1> Your total balance is : {{ user.balance }} </h1>
+       <script src="/static/jquery-2.1.3.min.js"></script>
+    <script src="/static/materialize.js"></script>
+      <script>
+  $(document).ready(function() {
+  $('.modal-trigger').leanModal();
+//   $('.parallax').parallax();
+//   Waves.displayEffect();
+   $('select').not('.disabled').material_select();
+});
+</script>
 
-   <hr>
+       <div id="index-banner" class="container">
+        <div class="section">
+            <div class="container">
+     <h3>Name: {{ user.name }}<br/>
 
+   Total balance: {{ user.balance }}$
+ </h3>
+ <h4>Items</h4>
+ <hr/>
+ {%for x in range(0,count)%}
+ Name:<a href={{item_links[x]}}>{{item_names[x]}}</a> &nbsp; &nbsp; Priority level:{{item_prioritys[x]}}<br/>
+ Description: {{item_descs[x]}}<br/>
+ Price: {{item_costs[x]}} &nbsp; &nbsp; Minimum Balance required: {{item_minbals[x]}}<br/>
+ <a href="/users/me/delete_item/{{item_ids[x]}}">Delete</a>
+ <hr/>
+ 
+ {%endfor%}
+   <a href="add_item" class="btn-floating btn-large waves-effect waves-light red right"><i class="material-icons">add</i></a>
 
-   {% for item in user.itemlist %}
-   <h3> {{ item.name }} </h3>
-   <h5> {{ item.desiredBalance }} </h5>
-   </br>
-   </br>
-   {% endfor %}
+  
+ </div>
+    {% endblock %}
